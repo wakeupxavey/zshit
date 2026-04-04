@@ -12,13 +12,13 @@
 Hard-code custom code that should appear BEFORE Google Doc here. 
 This code is in +page.svelte and can be manually coded using HTML or Svelte tags.
 -->
-<header class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100 mb-4" style="background-image:url('zshit1.png');background-size:cover;background-position:center;">
-  
+<header class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100 mb-4" style="background-image:url('image/zshit1.png');background-size:cover;background-position:center;">
+  <div class="container text-center col-12 align-items-top justify-content-center">
           <h1 class="text-white text-center display-1">Multimedia Template 2026</h1>
 
-     
-    
-  
+     </div>
+
+
 </header>
 
 
