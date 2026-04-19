@@ -1,73 +1,173 @@
 <!-- Instead of using goto() with buttons, just use <a> tags styled as buttons -->
-<main style="border: 1px solid black">
-  <div class="button-grid">
-    <a href="/youtube"><img src=/image/yt.png alt="YouTube" /></a>
-    <a href="/resources"><img src=/image/resources.png alt="Resources" /></a>
-    <a href="/zstuff"><img src=/image/zstuff.png alt="ZStuff" /></a>
-    <a href="/goals"><img src=/image/goals.png alt="Goals" /></a>
+<main>
+  <div class="squarezero"></div>
+
+  <div class="squares-layout">
+
+    <!-- ROW 1: zwordle + menu -->
+    <div class="row row-one">
+      <div class="squareone"></div>   <!-- zwordle -->
+      <div class="squaretwo">
+        <h1 class="menu">Menu</h1>
+         <div class="button-grid">
+         <a href="/goals"><img src=/image/goals.png alt="Goals" /></a>
+         <a href="/resources"><img src=/image/resources.png alt="Resources" /></a>
+         <a href="/youtube"><img src=/image/yt.png alt="YouTube" /></a>
+    
+      </div>
+
+
+      </div>   <!-- menu -->
+    </div>
+
+    <!-- ROW 2: stick figure + speech bubble -->
+    <div class="row row-two">
+      <div class="squarethree"></div> <!-- stick figure -->
+      <div class="squarefour"></div>  <!-- speech bubble -->
+    </div>
+
+    <!-- ROW 3: znews -->
+    <div class="row row-three">
+      <div class="squarefive"></div>  <!-- znews -->
+    </div>
+
   </div>
 
-  <div class="squareone">
-  
-  </div>
-  
-  <div class="squaretwo">
-  
-  </div>
-   
-  <div class="squarethree">
-  
-  </div>
+  <div class="squaresix"></div> <!-- footer -->
 </main>
 
 <style>
-  .squareone { 
-    background-color: lightblue;
-    width: 100px;
-    height: 100px;
+/* ── MAIN ── */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid black;
+}
+
+/* ── SQUARES LAYOUT ── */
+.squares-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* ── ROWS ── */
+.row {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Mobile default (<640px) — columns shrink to fit */
+.row-one {
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+}
+
+.row-two {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+.row-three {
+  justify-items: center;
+}
+
+/* ── SQUARES — Mobile default ── */
+.squarezero   { width: 100%; min-height: 80px;  border-radius: 8px; border: 3px solid black; background-color: lightgray; }
+.squareone   { min-height: 160px; border-radius: 8px; background-color: #BC4749; border:#FBD1A2 solid 3px; }
+.squaretwo   { min-height: 160px; border-radius: 8px; background-color: #FBD1A2; justify-content: right;   display: flex;
+  flex-direction: column; }
+.squarethree { min-height: 160px; border-radius: 8px; background-color: lightgreen; }
+.squarefour  { min-height: 160px; border-radius: 8px; background-color: #FBD1A2; }
+.squarefive  { min-height: 120px; border-radius: 8px; background-color: lavender; width: 80%; }
+.squaresix   { min-height: 60px;  border-radius: 8px; border: 3px solid black; background-color: lightgray; }
+
+/* ── TABLET (640px–960px) ── */
+@media (min-width: 640px) {
+  .row-one {
+    grid-template-columns: 380px 180px;
   }
 
-  .squaretwo { 
-    background-color: lightcoral;
-    width: 100px;
-    height: 100px;
+  .row-two {
+    grid-template-columns: 180px 380px;
   }
 
-  .squarethree { 
-    background-color: lightgreen;
-    width: 100px;
-    height: 100px;
-  }
-  
-  
-  a {
-    display: block;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s;
+  .squareone   { min-height: 200px; }
+  .squaretwo   { min-height: 200px; }
+  .squarethree { min-height: 220px; }
+  .squarefour  { min-height: 220px; }
+  .squarefive  { min-height: 150px; width: 65%; }
+  .squaresix   { min-height: 70px; }
+}
+
+/* ── DESKTOP (960px+) ── */
+@media (min-width: 960px) {
+  .row-one {
+    grid-template-columns: 560px 240px;
   }
 
-  a:hover {
-    transform: scale(1.05);
-    opacity: 0.85;
+  .row-two {
+    grid-template-columns: 240px 560px;
   }
 
-  img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-    display: block;
-  }
+  .squareone   { min-height: 240px; }
+  .squaretwo   { min-height: 240px; }
+  .squarethree { min-height: 260px; }
+  .squarefour  { min-height: 260px; }
+  .squarefive  { min-height: 180px; width: 60%; }
+  .squaresix   { min-height: 80px; }
+}
 
-  .button-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
 
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+.button-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 5%;
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+.button-grid a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+
+}
+
+.button-grid img {
+  width: 75%;
+  max-width: 75%; /* fill the column width instead of a fixed px size */
+  height: auto;
+  object-fit: contain;
+  justify-content: center;
+}
+
+.button-grid a:hover {
+  transform: scale(1.08);
+  opacity: 0.85;
+}
+
+.button-grid a:active {
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+.menu {
+  padding-bottom: 0%;
+  justify-content: center;
+  color: #BC4749;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 </style>
