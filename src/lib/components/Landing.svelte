@@ -1,6 +1,9 @@
 <!-- Instead of using goto() with buttons, just use <a> tags styled as buttons -->
+
+<div class="squarezero">
+    <h1 class="welcome">Zshit!</h1>
+  </div>
 <main>
-  <div class="squarezero"></div>
 
   <div class="squares-layout">
 
@@ -22,7 +25,10 @@
 
     <!-- ROW 2: stick figure + speech bubble -->
     <div class="row row-two">
-      <div class="squarethree"></div> <!-- stick figure -->
+      <div class="squarethree">
+
+        <img class = "stickman" src="/image/stickland1.png" alt="Stick Figure" />
+      </div> <!-- stick figure -->
       <div class="squarefour"></div>  <!-- speech bubble -->
     </div>
 
@@ -33,8 +39,10 @@
 
   </div>
 
-  <div class="squaresix"></div> <!-- footer -->
+
 </main>
+
+<div class="squaresix"></div> <!-- footer -->
 
 <style>
 /* ── MAIN ── */
@@ -67,22 +75,25 @@ main {
 /* Mobile default (<640px) — columns shrink to fit */
 .row-one {
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  justify-content: space-between; /* ← change this */
+
 }
 
 .row-two {
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  
 }
 
 .row-three {
-  justify-items: center;
+  justify-items: end;
 }
 
 /* ── SQUARES — Mobile default ── */
 .squarezero   { width: 100%; min-height: 80px;  border-radius: 8px; border: 3px solid black; background-color: lightgray; }
 .squareone   { min-height: 160px; border-radius: 8px; background-color: #BC4749; border:#FBD1A2 solid 3px; }
-.squaretwo   { min-height: 160px; border-radius: 8px; background-color: #FBD1A2; justify-content: right;   display: flex;
+.squaretwo   { min-height: 160px; border-radius: 8px; background-color: #FBD1A2;  display: flex;
   flex-direction: column; }
-.squarethree { min-height: 160px; border-radius: 8px; background-color: lightgreen; }
+.squarethree { min-height: 160px; border-radius: 8px; background-color: rgb(255, 255, 255); }
 .squarefour  { min-height: 160px; border-radius: 8px; background-color: #FBD1A2; }
 .squarefive  { min-height: 120px; border-radius: 8px; background-color: lavender; width: 80%; }
 .squaresix   { min-height: 60px;  border-radius: 8px; border: 3px solid black; background-color: lightgray; }
@@ -91,6 +102,8 @@ main {
 @media (min-width: 640px) {
   .row-one {
     grid-template-columns: 380px 180px;
+    justify-content: space-between; /* ← change this */
+
   }
 
   .row-two {
@@ -109,18 +122,27 @@ main {
 @media (min-width: 960px) {
   .row-one {
     grid-template-columns: 560px 240px;
+    justify-content: space-between; /* ← change this */
   }
+
 
   .row-two {
     grid-template-columns: 240px 560px;
   }
 
   .squareone   { min-height: 240px; }
-  .squaretwo   { min-height: 240px; }
+  .squaretwo   { min-height: 240px; align-self: end; }
   .squarethree { min-height: 260px; }
   .squarefour  { min-height: 260px; }
   .squarefive  { min-height: 180px; width: 60%; }
   .squaresix   { min-height: 80px; }
+}
+
+.stickman {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  justify-content: center;
 }
 
 
@@ -169,5 +191,26 @@ main {
   margin-right: auto;
 }
 
+.squarezero {
+  width: 100%;
+  text-align: center;
+  background-color: #9e30329e;
+  
+}
+
+.squaresix {
+  width: 100%;
+  text-align: center;
+  background-color: #9e30329e;
+
+}
+.welcome {
+  padding-top: 14px;
+  justify-content: center;
+  color: #FBD1A2;
+  font-size: larger;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 </style>

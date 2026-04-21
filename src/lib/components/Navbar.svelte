@@ -3,6 +3,7 @@
   <a href="/resources">Resources</a>
   <a href="/zstuff">ZStuff</a>
   <a href="/goals">Goals</a>
+  <a href="/">Home</a>
 </nav>
 
 <style>
@@ -10,14 +11,15 @@
     display: flex;
     gap: 1.5rem;
     padding: 1rem 2rem;
-    background: #333;
+    background-color: #9e30329e;
     position: sticky;
     top: 0;
     z-index: 100;
+    border: 2px solid black;
   }
 
   a {
-    color: white;
+    color: #FBD1A2;
     text-decoration: none;
     font-size: 1rem;
     transition: opacity 0.2s;
