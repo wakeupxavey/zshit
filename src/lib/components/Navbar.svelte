@@ -1,21 +1,23 @@
 <nav>
-  <a href="/youtube">YouTube</a>
-  <a href="/resources">Resources</a>
-  <a href="/zstuff">ZStuff</a>
-  <a href="/goals">Goals</a>
-  <a href="/">Home</a>
+  <a href="/youtube">yt</a>
+  <a href="/resources">resources</a>
+  <!-- <a href="/zstuff">ZStuff</a> -->
+  <a href="/goals">about</a>
+  <a href="/">home</a>
 </nav>
 
 <style>
   nav {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 1rem 2rem;
     background-color: #9e30329e;
     position: sticky;
     top: 0;
     z-index: 100;
     border: 2px solid black;
+    flex-direction: row-reverse;
+    box-shadow: 0 3px 1.5px black;
   }
 
   a {

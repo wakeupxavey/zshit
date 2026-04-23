@@ -1,7 +1,7 @@
 <!-- Instead of using goto() with buttons, just use <a> tags styled as buttons -->
 
 <div class="squarezero">
-    <h1 class="welcome">Zshit!</h1>
+    <h1 class="welcome">ZSHIT</h1>
   </div>
 <main>
 
@@ -192,9 +192,13 @@ main {
 }
 
 .squarezero {
+  display: flex;
   width: 100%;
   text-align: center;
   background-color: #9e30329e;
+  border: 2px solid black;
+  box-shadow: 0 2.5px 1.5px #171616;
+  justify-self: center;
   
 }
 
@@ -208,9 +212,13 @@ main {
   padding-top: 14px;
   justify-content: center;
   color: #FBD1A2;
-  font-size: larger;
+  font-size: xx-large;
   margin-left: auto;
   margin-right: auto;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+
 }
 
 </style>
