@@ -1,7 +1,11 @@
 <!-- Instead of using goto() with buttons, just use <a> tags styled as buttons -->
 
+<script>
+  let show = true;
+</script>
+
 <div class="squarezero">
-    <h1 class="welcome">ZSHIT</h1>
+    <h1 class="welcome">Z SITE!</h1>
   </div>
 <main>
 
@@ -26,10 +30,16 @@
     <!-- ROW 2: stick figure + speech bubble -->
     <div class="row row-two">
       <div class="squarethree">
-
+           <div class="stickbutton"> 
+                <a class="small-rect" href="/#" on:click|preventDefault={() => show = !show}>Press me!</a>
+            </div>
         <img class = "stickman" src="/image/stickland1.png" alt="Stick Figure" />
       </div> <!-- stick figure -->
-      <div class="squarefour"></div>  <!-- speech bubble -->
+      <div class="squarefour">
+        <img class="bubble" src="/image/bubble.png" alt="Speech Bubble">
+          <p class="bubble-text" class:show class:hide={!show}>Hello newbie.</p>
+          <p class="bubble-text" class:show={!show} class:hide={show}>Welcome to Z SITE!</p>
+      </div>
     </div>
 
     <!-- ROW 3: znews -->
@@ -93,8 +103,8 @@ main {
 .squareone   { min-height: 160px; border-radius: 8px; background-color: #BC4749; border:#FBD1A2 solid 3px; }
 .squaretwo   { min-height: 160px; border-radius: 8px; background-color: #FBD1A2;  display: flex;
   flex-direction: column; }
-.squarethree { min-height: 160px; border-radius: 8px; background-color: rgb(255, 255, 255); }
-.squarefour  { min-height: 160px; border-radius: 8px; background-color: #FBD1A2; }
+.squarethree { height: 200px; border-radius: 8px; background-color: rgb(255, 255, 255); display: flex; flex-direction: column; align-items: center; overflow: hidden; }
+.squarefour  { height: 200px; border-radius: 8px; background-color: #BC4749; border: solid 1px black }
 .squarefive  { min-height: 120px; border-radius: 8px; background-color: lavender; width: 80%; }
 .squaresix   { min-height: 60px;  border-radius: 8px; border: 3px solid black; background-color: lightgray; }
 
@@ -103,8 +113,7 @@ main {
   .row-one {
     grid-template-columns: 380px 180px;
     justify-content: space-between; /* ← change this */
-
-  }
+ }
 
   .row-two {
     grid-template-columns: 180px 380px;
@@ -112,8 +121,8 @@ main {
 
   .squareone   { min-height: 200px; }
   .squaretwo   { min-height: 200px; }
-  .squarethree { min-height: 220px; }
-  .squarefour  { min-height: 220px; }
+  .squarethree { height: 260px; }
+  .squarefour  { height: 260px; }
   .squarefive  { min-height: 150px; width: 65%; }
   .squaresix   { min-height: 70px; }
 }
@@ -132,17 +141,33 @@ main {
 
   .squareone   { min-height: 240px; }
   .squaretwo   { min-height: 240px; align-self: end; }
-  .squarethree { min-height: 260px; }
-  .squarefour  { min-height: 260px; }
+  .squarethree { height: 300px; }
+  .squarefour  { height: 300px; }
   .squarefive  { min-height: 180px; width: 60%; }
   .squaresix   { min-height: 80px; }
 }
 
 .stickman {
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit: contain;
   justify-content: center;
+}
+
+.bubble {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+  justify-content: center;
+}
+
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 
@@ -216,9 +241,44 @@ main {
   margin-left: auto;
   margin-right: auto;
   font-family: Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 1000;
   letter-spacing: 2px;
 
 }
 
+
+.stickbutton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3px;
+  flex-shrink: 2;  /* add this */
+}
+.small-rect {
+  display: inline-block;
+  width: 80%;
+  height: 30px;
+  padding: 6px 0;
+  background-color: #BC4749;
+  color: #FBD1A2;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 4px;  /* reduced */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  flex-shrink: 0;  /* key fix — stops it from affecting image space */
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.small-rect:hover {
+  background-color: #9e3032;
+  transform: scale(1.05);
+}
+
+.small-rect:active {
+  transform: scale(0.95);
+}
 </style>

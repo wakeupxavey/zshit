@@ -3,6 +3,11 @@
 </script>
 
 <Navbar />
+
+<header>
+  <h1>about.</h1>
+  <h2>So you wanna know about z shit eh?</h2>
+</header>
 <main>
  <!-- <div class="basic">
     <h2>My goals for this project:</h2>
@@ -13,31 +18,15 @@
     </ul> -->
 
     <div class="goals-container">
-       <div class="squarezero">  
-      <h1>about.</h1>
-      </div>
-      
-      <div class="goals">
-                 <h2>So you wanna know about z shit eh?</h2>
-        
-
-      </div>
-      
-      <!-- <div class="goals">
-       <p>ZSHIT is a project that tries to tell stories to young adults.
-</p>
+       <div class="goals"> 
         <img src="/image/stickland1.png" alt="Goal 1" />
-      </div> -->
-<!--1 -->
-       <div class="goals">
-        <img src="/image/stickland1.png" alt="Goal 1" />
-        <p>ZSHIT is a project that tries to tell stories to young adults.
-</p>
+        <p>ZSHIT is a project that tries to tell stories to young adults.</p>
       </div>
 <!--2 -->
-       <div class="goals">
-        <p>The idea was born from my friends. So before we move on, shoutout everyone from DC, the Springs, Tacoma, Berkeley, you all are le goats. </p>
-        <img src="/image/stickland1.png" alt="Goal 1" />
+      <div class="goals">
+       <img src="/image/stickland1.png" alt="Goal 1" />
+      <p>The idea was born from my friends. So before we move on, shoutout everyone from DC, the Springs, Tacoma, Berkeley, you all are le goats. </p>
+        
       </div>
 <!--3 -->
        <div class="goals">
@@ -50,11 +39,12 @@ The idea itself was born out of necessity. In my early adult years, I felt how h
       </div>
 <!--4 -->
        <div class="goals">
+          <img src="/image/stickland1.png" alt="Goal 1" />
         <p>I want this stuff to be fun. I want to tell stories. I want to inspire people. I want people to feel better about the world when they leave this channel. And over everything, I want this thing to be an instrument of good. 
 
 Sounds kinda arrogant. But so what, dream big. 
 </p>
-        <img src="/image/stickland1.png" alt="Goal 1" />
+     
       </div>
 <!--5 -->
        <div class="goals">
@@ -63,11 +53,12 @@ Sounds kinda arrogant. But so what, dream big.
       </div>
 <!--6 -->
        <div class="goals">
+          <img src="/image/stickland1.png" alt="Goal 1" />
         <p>I want this stuff to be fun. I want to tell stories. I want to inspire people. I want people to feel better about the world when they leave this channel. And over everything, I want this thing to be an instrument of good. 
 
 Sounds kinda arrogant. But so what, dream big. 
 </p>
-        <img src="/image/stickland1.png" alt="Goal 1" />
+   
       </div>
  <!--7 -->
       <div class="goals">
@@ -80,9 +71,10 @@ Sounds kinda arrogant. But so what, dream big.
  <!--8 -->
     
       <div class="goals">
+         <img src="/image/stickland1.png" alt="Goal 1" />
         <p>Anyways, I started this project, because I wanted learning to stop being so boring. Because, can you imagine a world like that? A world full of young energetic people who care? A world of people fighting for mountainous change? A media that doesn’t answer to billionaires, but to us, the people?  That’s a world I want to see. 
 </p>
-        <img src="/image/stickland1.png" alt="Goal 1" />
+        
       </div>
  <!--9 -->
    <div class="goals">
@@ -135,22 +127,29 @@ Sounds kinda arrogant. But so what, dream big.
 .goals-container {
   display: flex;
   flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  gap: 120px;
+  margin-top: 100px;
+  
+ 
 }
 .goals {
   display: flex;
-  justify-content: space-evenly;
-  gap: 20%;
+  justify-content: flex-start;
+  gap: 10px;
   /* outline: #ffffff solid 2px; */
+  padding: 0;
+  flex-direction: space-between;
   align-items: center;
-  padding: 3rem;
-
-}
-
-  .squarezero {
-  width: 100%;
-  padding-top: 3%;
-  text-align: center;
   
+@media (min-width: 641px) {
+      &:nth-child(even) {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  }
 }
 
 
@@ -164,12 +163,16 @@ p{
 h1{
   color: #FBD1A2;
   font-size: 3em;
+  text-align: center;
+  margin-top: 20px;
 }
 
 h2{
   color: #BC4749;
   text-shadow: #FBD1A2 1px 1px 0px, #FBD1A2 -1px -1px 0px, #FBD1A2 -1px 1px 0px, #FBD1A2 1px -1px 0px;
   font-size: 2em;
+  text-align: center;
+  margin: 30px auto;
 }
 /* .basic {
   padding-top: 14px;

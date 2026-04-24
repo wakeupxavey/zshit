@@ -11,7 +11,7 @@
 
   <div class="resources-container">
     <div class="list-section">
-      <h2>Episode</h2>
+      <h2>Episodes</h2>
       <ul>
         <li><a href="#">Where are your friends?</a></li>
         <li><a href="#">Are we breaking up with our phones?</a></li>
