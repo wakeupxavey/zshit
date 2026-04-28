@@ -13,9 +13,9 @@
     <div class="list-section">
       <h2>Episodes</h2>
       <ul>
-        <li><a href="#">Where are your friends?</a></li>
-        <li><a href="#">Are we breaking up with our phones?</a></li>
-        <li><a href="#">Where did all our jobs go?</a></li>
+        <li><a href="/episode1">Where are your friends?</a></li>
+        <li><a href="/episode2">Are we breaking up with our phones?</a></li>
+        <li><a href="/episode3">Where did all our jobs go?</a></li>
       </ul>
     </div>
 

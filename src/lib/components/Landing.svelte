@@ -1,6 +1,8 @@
 <!-- Instead of using goto() with buttons, just use <a> tags styled as buttons -->
 
 <script>
+	import Zwordle from "./Zwordle.svelte";
+
   let show = true;
 </script>
 
@@ -13,7 +15,7 @@
 
     <!-- ROW 1: zwordle + menu -->
     <div class="row row-one">
-      <div class="squareone"></div>   <!-- zwordle -->
+      <div class="squareone"><Zwordle/></div>   <!-- zwordle -->
       <div class="squaretwo">
         <h1 class="menu">Menu</h1>
          <div class="button-grid">
@@ -31,7 +33,7 @@
     <div class="row row-two">
       <div class="squarethree">
            <div class="stickbutton"> 
-                <a class="small-rect" href="/#" on:click|preventDefault={() => show = !show}>Press me!</a>
+                <a class="small-rect" href="/#" on:click|preventDefault={() => show = !show}>Click me!</a>
             </div>
         <img class = "stickman" src="/image/stickland1.png" alt="Stick Figure" />
       </div> <!-- stick figure -->
@@ -191,9 +193,8 @@ main {
 }
 
 .button-grid img {
-  width: 75%;
-  max-width: 75%; /* fill the column width instead of a fixed px size */
-  height: auto;
+  width: 85%;
+  max-width: 85%; /* fill the column width instead of a fixed px size */
   object-fit: contain;
   justify-content: center;
 }
@@ -248,28 +249,28 @@ main {
 
 
 .stickbutton {
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: center;
   padding: 3px;
-  flex-shrink: 2;  /* add this */
+  flex-shrink: 0;  /* add this */
 }
 .small-rect {
-  display: inline-block;
-  width: 80%;
+  display: block;
+  width: 110%;
   height: 30px;
   padding: 6px 0;
   background-color: #BC4749;
   color: #FBD1A2;
   border: none;
   border-radius: 5px;
-  margin-bottom: 4px;  /* reduced */
+  margin-bottom: 1px;  /* reduced */
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-weight: bold;
-  flex-shrink: 0;  /* key fix — stops it from affecting image space */
+ 
   transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
