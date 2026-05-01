@@ -1,5 +1,7 @@
 <script>
   import Navbar from '$lib/components/Navbar.svelte';
+
+  import yt from '$lib/assets/image/yt.png';
 </script>
 
 <Navbar />
@@ -12,7 +14,7 @@
   <div class="youtube-container">
 
   <a href="https://www.youtube.com/@Zsh.t" target="_blank" rel="noopener noreferrer">
-      <img src="/image/yt.png" alt="YouTube" />
+      <img src={yt} alt="YouTube" />
     </a>
   </div>
 </main>

@@ -1,5 +1,7 @@
 <script>
   import Navbar from '$lib/components/Navbar.svelte';
+
+  import res1 from '$lib/assets/image/resources.png';
 </script>
 
 <Navbar />
@@ -20,7 +22,7 @@
     </div>
 
     <div class="image-section">
-      <img src="/image/resources.png" alt="Resources" />
+      <img src={res1} alt="Resources" />
     </div>
   </div>
 </main>

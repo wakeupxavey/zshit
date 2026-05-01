@@ -5,24 +5,47 @@
 
   let show = true;
 
-  // import image1 from "/image/sitestuff1.png";
-  
+// background decorations
+  import image5 from '../assets/image/sitestuff5.png';
+  import image1 from '../assets/image/sitestuff1.png';
+  import image2 from '../assets/image/sitestuff2.png';
+  import image3 from '../assets/image/sitestuff3.png';
+  import image4 from '../assets/image/sitestuff4.png';
+  import image6 from '../assets/image/sitestuff6.png';
+  import image7 from '../assets/image/sitestuff7.png';
+
+// menu
+
+  import goals from '../assets/image/goals.png';
+  import resources from '../assets/image/resources.png';
+  import yt from '../assets/image/yt.png';
+
+// stick figure + bubble
+
+  import stickland1 from '../assets/image/stickland1.png';
+  import bubble from '../assets/image/bubble.png';
+
+// footer
+
+    import mail from '../assets/image/sitestuff7.png';
 </script>
 
 <div class="squarezero">
     <h1 class="welcome">Z SITE!</h1>
   </div>
 <main>
-  <!-- <div class="bg-decorations">
-    <img src="/image/sitestuff1.png" alt="" class="bg-img bg1" />
-    <img src="/image/sitestuff2.png" alt="" class="bg-img bg2" />
-    <img src="/image/sitestuff3.png" alt="" class="bg-img bg3" />
-    <img src="/image/sitestuff4.png" alt="" class="bg-img bg4" />
-    <img src="/image/sitestuff5.png" alt="" class="bg-img bg5" />
-    <img src="/image/sitestuff6.png" alt="" class="bg-img bg6" />
-    <img src="/image/sitestuff7.png" alt="" class="bg-img bg7" />
-  </div> -->
-  <!-- rest of your content -->
+  <div class="bg-decorations">
+  
+    <img src={image1} alt="" class="bg-img bg1" />
+    <img src={image2} alt="" class="bg-img bg2" />
+    <img src={image3} alt="" class="bg-img bg3" />
+    <img src={image4} alt="" class="bg-img bg4" />
+    <img src={image5} alt="" class="bg-img bg5" />
+    <img src={image6} alt="" class="bg-img bg6" />
+    <img src={image7} alt="" class="bg-img bg7" />
+     
+   </div>
+ <!-- rest of your content -->
 
   <div class="squares-layout">
 
@@ -32,10 +55,10 @@
       <div class="squaretwo">
         <h1 class="menu">Menu</h1>
          <div class="button-grid">
-         <a href="/goals"><img src=/image/goals.png alt="Goals" /></a>
-         <a href="/resources"><img src=/image/resources.png alt="Resources" /></a>
-         <a href="/youtube"><img src=/image/yt.png alt="YouTube" /></a>
-    
+         <a href="/goals"><img src={goals} alt="Goals" /></a>
+         <a href="/resources"><img src={resources} alt="Resources" /></a>
+         <a href="/youtube"><img src={yt} alt="YouTube" /></a>
+
       </div>
 
 
@@ -48,10 +71,10 @@
            <div class="stickbutton"> 
                 <a class="small-rect" href="/#" on:click|preventDefault={() => show = !show}>Click me!</a>
             </div>
-        <img class = "stickman" src="/image/stickland1.png" alt="Stick Figure" />
+        <img class = "stickman" src={stickland1} alt="Stick Figure" />
       </div> <!-- stick figure -->
       <div class="squarefour">
-        <img class="bubble" src="/image/bubble.png" alt="Speech Bubble">
+        <img class="bubble" src={bubble} alt="Speech Bubble">
           <p class="bubble-text" class:show class:hide={!show}>Hello <span style="color: #BC4749;">newbie.</span></p>
           <p class="bubble-text welcome" class:show={!show} class:hide={show} style="color: black;">Welcome to  <span>Z</span><span> </span><span>S</span><span>I</span><span>T</span><span>E</span><span>!</span></p>
       </div>
@@ -73,8 +96,8 @@
    <a href="https://mail.google.com/mail/?view=cm&to=youremail@gmail.com" target="_blank" class="footer-input">
   zmessage...
 </a>
-    <img src="/image/sitestuff7.png" alt="Mail" class="mail-icon" />
-        
+    <img src={mail} alt="Mail" class="mail-icon" />
+
 </div> <!-- footer -->
 
 <style>
