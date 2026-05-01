@@ -16,6 +16,8 @@ Hard-code custom code that should appear BEFORE Google Doc here.
 This code is in +page.svelte and can be manually coded using HTML or Svelte tags.
 -->
 <Landing />
+
+
 <header class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100 mb-4" style="background-size:cover;background-position:center;">
   <h1>
     z site

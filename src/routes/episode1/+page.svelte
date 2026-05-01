@@ -24,16 +24,15 @@
   <div class="sources-section">
     <h2>Sources</h2>
     <ul>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a href="#">7</a></li>
-      <li><a href="#">8</a></li>
-      <li><a href="#">9</a></li>
-      <li><a href="#">10</a></li>
+       <li><a href="https://www.statista.com/chart/20713/lonlieness-america/?srsltid=AfmBOoq2YcdNKLYgF4U65bLYmMa1dzIEp7Yt81JI2CqzUw7stfgim8mf">Is Lonely</a></li>
+      <li><a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf">Surgeon General</a></li>
+      <li><a href="https://www.vice.com/en/article/your-loneliness-is-literally-killing-you/">Loneliness Kills</a></li>
+      <li><a href="https://www.bls.gov/tus/">American Time Use Survey (Data)</a></li>
+      <li><a href="https://www.bls.gov/tus/data.htm">American Time Use Survey (Data Files)</a></li>
+      <li><a href="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf">More Surgeon General</a></li>
+      <li><a href="https://www.cnbc.com/2026/02/07/young-people-quiet-revolution-social-media.html">Gen Z Revolts</a></li>
+      <li><a href="https://pudding.cool/2025/06/hello-stranger/">The Pudding is Cool</a></li>
+      <li><a href="https://news.asu.edu/b/20250421-why-are-humans-social-creatures">Humans Social Creatures</a></li>
     </ul>
   </div>
 </main>

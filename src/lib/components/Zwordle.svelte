@@ -44,7 +44,7 @@
 
 <!-- COMPACT VIEW -->
 <div class="zwordle-compact">
-  <h2 class="zhang-title">Z-Hang</h2>
+  <h2 class="zhang-title">slangman</h2>
   <p class="subhead">basic unc test</p>
 
   <div class="compact-gallows">
@@ -76,7 +76,7 @@
 
       <button class="close-btn" on:click={closeModal}>✕</button>
 
-      <h2 class="zhang-title modal-title">Z-Hang</h2>
+      <h2 class="zhang-title modal-title">Slangman</h2>
 
       <!-- GALLOWS + IMAGE -->
       <div class="hangman-row">
@@ -140,11 +140,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
   padding: 0.4rem;
   width: 100%;
   box-sizing: border-box;
-  width: fit-content;
+  
 }
 
 .subhead {
@@ -396,6 +397,10 @@
     font-size: 1.6rem;
   }
 
+  .zwordle-compact {
+    justify-content: center;
+  }
+
   .subhead {
     font-size: 0.9rem;
   }
@@ -419,6 +424,11 @@
   .zhang-title {
     font-size: 2rem;
   }
+
+  .zwordle-compact {
+    justify-content: center;
+  }
+
 
   .subhead {
     font-size: 1rem;

@@ -24,16 +24,19 @@
   <div class="sources-section">
     <h2>Sources</h2>
     <ul>
-      <li><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li><a href="#">6</a></li>
-      <li><a href="#">7</a></li>
-      <li><a href="#">8</a></li>
-      <li><a href="#">9</a></li>
-      <li><a href="#">10</a></li>
+      <li><a href="https://dcdx.co/gen-z-screen-time-report-2024">Screentime Survey</a></li>
+      <li><a href="https://www.addictioncenter.com/behavioral-addictions/phone-addiction/">Phone Addiction Definition</a></li>
+      <li><a href="https://www.harmonyhit.com/gen-z-anxiety-statistics/">50% Daily Anxiety</a></li>
+      <li><a href="https://www.visualcapitalist.com/cp/visualizing-the-daily-scroll-of-the-average-social-media-user/">Daily Scroll is 300 Feet Long</a></li>
+      <li><a href="https://philosophynow.org/issues/145/Kierkegaard_Young_Free_and_Anxious">Kierkegaard on Anxiety</a></li>
+      <li><a href="https://theharrispoll.com/articles/gen-z-social-media-smart-phones/">Harris Poll on How We See Social Media</a></li>
+      <li><a href="https://www.nysscpa.org/article-content/survey-gen-z-consumes-the-most-media-daily-compared-to-other-generations-111124#sthash.n9I8eLpL.dpbs">Most Media-Loving Gen</a></li>
+      <li><a href="https://www.nbcwashington.com/news/local/flip-phone-summer-gen-z-ditch-smartphones-to-disconnect-from-social-media/3958907/">Flip Phone Summer</a></li>
+      <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10740995/">First Study</a></li>
+      <li><a href="https://psycnet.apa.org/record/2022-50916-001?doi=1">Second Study</a></li>
+      <li><a href="https://www.harmonyhit.com/phone-screen-time-statistics/">We Want to Cut Down</a></li>
+      <li><a href="https://www.boredomsociety.com/jbs/index.php/journal">Journal of Boredom Studies</a></li>
+      <li><a href="https://www.boredomsociety.com/jbs/index.php/journal">Boredom Drives Us</a></li>
     </ul>
   </div>
 </main>

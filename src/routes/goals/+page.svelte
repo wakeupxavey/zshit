@@ -19,18 +19,18 @@
 
     <div class="goals-container">
        <div class="goals"> 
-        <img src="/image/stickland1.png" alt="Goal 1" />
+        <img src="/image/met1.png" alt="Goal 1" />
         <p>ZSHIT is a project that tries to tell stories to young adults.</p>
       </div>
 <!--2 -->
       <div class="goals">
-       <img src="/image/stickland1.png" alt="Goal 1" />
+       <img src="/image/met2.png" alt="Goal 1" />
       <p>The idea was born from my friends. So before we move on, shoutout everyone from DC, the Springs, Tacoma, Berkeley, you all are le goats. </p>
         
       </div>
 <!--3 -->
        <div class="goals">
-         <img src="/image/stickland1.png" alt="Goal 1" />
+         <img src="/image/met3.png" alt="Goal 1" />
 <p>Anyways, where was I? Ahh yes, <i>the idea.</i>
 
 The idea itself was born out of necessity. In my early adult years, I felt how hard it is to stay engaged, and have a healthy relationship with the news. News these days just feels way too fast – and I think we miss out on a lot when we’re trying to chase every new story. I don’t want to do that. 
@@ -39,7 +39,7 @@ The idea itself was born out of necessity. In my early adult years, I felt how h
       </div>
 <!--4 -->
        <div class="goals">
-          <img src="/image/stickland1.png" alt="Goal 1" />
+          <img src="/image/met4.png" alt="Goal 1" />
         <p>I want this stuff to be fun. I want to tell stories. I want to inspire people. I want people to feel better about the world when they leave this channel. And over everything, I want this thing to be an instrument of good. 
 
 Sounds kinda arrogant. But so what, dream big. 
@@ -48,48 +48,32 @@ Sounds kinda arrogant. But so what, dream big.
       </div>
 <!--5 -->
        <div class="goals">
-        <img src="/image/stickland1.png" alt="Goal 1" />
+        <img src="/image/met5.png" alt="Goal 1" />
         <p>The goal has always been to help people out. Most of my ideas start out from simple conversations, or random thoughts that come my way. I find most of my stories in obvious places. I like starting there because that’s usually where you find things most people can relate to. Once I’m there, then I have to check under the hood to see if there’s something going on that people aren’t seeing. If I find that, then I’m off.</p>
       </div>
 <!--6 -->
        <div class="goals">
-          <img src="/image/stickland1.png" alt="Goal 1" />
-        <p>I want this stuff to be fun. I want to tell stories. I want to inspire people. I want people to feel better about the world when they leave this channel. And over everything, I want this thing to be an instrument of good. 
-
-Sounds kinda arrogant. But so what, dream big. 
+          <img src="/image/met6.png" alt="Goal 1" />
+          <p>My process is pretty simple after that. And yeah – no, you don't get to know everything, but let's just say it involves lots of screenshots, reading, yelling at walls, drawing, quitting 4 or 5 times, and drinking lots and lots of water. Water is key.
 </p>
    
       </div>
  <!--7 -->
       <div class="goals">
-       <img src="/image/stickland1.png" alt="Goal 1" />
-        <p>My process is pretty simple after that. And yeah – no, you don't get to know everything, but let's just say it involves lots of screenshots, reading, yelling at walls, drawing, quitting 4 or 5 times, and drinking lots and lots of water. Water is key.
+       <img src="/image/met7.png" alt="Goal 1" />
+       <p>Anyways, I started this project, because I wanted learning to stop being so boring. Because, can you imagine a world like that? A world full of young energetic people who care? A world of people fighting for mountainous change? A media that doesn’t answer to billionaires, but to us, the people?  That’s a world I want to see.
 </p>
-       
-      </div> 
+      </div>
       
  <!--8 -->
     
       <div class="goals">
-         <img src="/image/stickland1.png" alt="Goal 1" />
-        <p>Anyways, I started this project, because I wanted learning to stop being so boring. Because, can you imagine a world like that? A world full of young energetic people who care? A world of people fighting for mountainous change? A media that doesn’t answer to billionaires, but to us, the people?  That’s a world I want to see. 
-</p>
-        
-      </div>
- <!--9 -->
-   <div class="goals">
-   <img src="/image/stickland1.png" alt="Goal 1" />
+         <img src="/image/met8.png" alt="Goal 1" />
         <p>Thanks for reading, I’ll z you next time.</p>
-
-       
       </div>
-
 
 
     </div>
- 
- 
-    <!-- </div> -->
 
 
 </main>
