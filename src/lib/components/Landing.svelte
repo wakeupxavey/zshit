@@ -62,8 +62,8 @@
         <h1 class="menu">Menu</h1>
          <div class="button-grid">
          <a href="{base}/goals"><img src={goals} alt="Goals" /></a>
-         <a href="/resources"><img src={resources} alt="Resources" /></a>
-         <a href="/youtube"><img src={yt} alt="YouTube" /></a>
+         <a href="{base}/resources"><img src={resources} alt="Resources" /></a>
+         <a href="{base}/youtube"><img src={yt} alt="YouTube" /></a>
 
       </div>
 
