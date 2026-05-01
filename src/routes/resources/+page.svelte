@@ -2,6 +2,8 @@
   import Navbar from '$lib/components/Navbar.svelte';
 
   import res1 from '$lib/assets/image/resources.png';
+
+  import { base } from "$app/paths";
 </script>
 
 <Navbar />
@@ -15,9 +17,9 @@
     <div class="list-section">
       <h2>Episodes</h2>
       <ul>
-        <li><a href="/episode1">Where are your friends?</a></li>
-        <li><a href="/episode2">Are we breaking up with our phones?</a></li>
-        <li><a href="/episode3">Where did all our jobs go?</a></li>
+        <li><a href="{base}/episode1">Where are your friends?</a></li>
+        <li><a href="{base}/episode2">Are we breaking up with our phones?</a></li>
+        <li><a href="{base}/episode3">Where did all our jobs go?</a></li>
       </ul>
     </div>
 
