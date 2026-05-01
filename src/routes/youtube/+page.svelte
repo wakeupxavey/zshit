@@ -2,6 +2,7 @@
   import Navbar from '$lib/components/Navbar.svelte';
 
   import yt from '$lib/assets/image/yt.png';
+
 </script>
 
 <Navbar />

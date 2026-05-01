@@ -1,9 +1,13 @@
+<script>
+  import {base} from "$app/paths";
+</script>
+
 <nav>
-  <a href="/youtube">yt</a>
-  <a href="/resources">resources</a>
-  <!-- <a href="/zstuff">ZStuff</a> -->
-  <a href="/goals">about</a>
-  <a href="/">home</a>
+  <a href="{base}/youtube">yt</a>
+  <a href="{base}/resources">resources</a>
+  <!-- <a href="{base}/zstuff">ZStuff</a> -->
+  <a href="{base}/goals">about</a>
+  <a href="{base}/">home</a>
 </nav>
 
 <style>

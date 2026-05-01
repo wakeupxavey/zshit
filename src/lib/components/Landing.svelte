@@ -75,7 +75,7 @@
     <div class="row row-two">
       <div class="squarethree">
            <div class="stickbutton"> 
-                <a class="small-rect" href="/#" on:click|preventDefault={() => show = !show}>Click me!</a>
+                <a class="small-rect" href="{base}/#" on:click|preventDefault={() => show = !show}>Click me!</a>
             </div>
         <img class = "stickman" src={stickland1} alt="Stick Figure" />
       </div> <!-- stick figure -->
