@@ -30,6 +30,10 @@
   import mail from '../assets/image/sitestuff7.png';
 
 
+  // base
+
+  import { base } from "$app/paths";
+
 </script>
 
 <div class="squarezero">
@@ -57,7 +61,7 @@
       <div class="squaretwo">
         <h1 class="menu">Menu</h1>
          <div class="button-grid">
-         <a href="/goals"><img src={goals} alt="Goals" /></a>
+         <a href="{base}/goals"><img src={goals} alt="Goals" /></a>
          <a href="/resources"><img src={resources} alt="Resources" /></a>
          <a href="/youtube"><img src={yt} alt="YouTube" /></a>
 
