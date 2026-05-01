@@ -13,7 +13,7 @@
     <h1 class="welcome">Z SITE!</h1>
   </div>
 <main>
-  <div class="bg-decorations">
+  <!-- <div class="bg-decorations">
     <img src="/image/sitestuff1.png" alt="" class="bg-img bg1" />
     <img src="/image/sitestuff2.png" alt="" class="bg-img bg2" />
     <img src="/image/sitestuff3.png" alt="" class="bg-img bg3" />
@@ -21,7 +21,7 @@
     <img src="/image/sitestuff5.png" alt="" class="bg-img bg5" />
     <img src="/image/sitestuff6.png" alt="" class="bg-img bg6" />
     <img src="/image/sitestuff7.png" alt="" class="bg-img bg7" />
-  </div>
+  </div> -->
   <!-- rest of your content -->
 
   <div class="squares-layout">
