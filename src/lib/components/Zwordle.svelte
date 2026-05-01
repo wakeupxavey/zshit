@@ -12,7 +12,7 @@
   $: gameOver = won || lost;
 
   $: imageIndex = won ? 8 : wrongGuesses;
-  $: hangmanSrc = `/image/hangman${imageIndex}.png`;
+  $: hangmanSrc = `${base}/image/hangman${imageIndex}.png`;
 
   /** @param {string} letter */
   function guess(letter) {
@@ -40,6 +40,8 @@
   let animating = true;
 
 
+
+  import {base} from "$app/paths";
 </script>
 
 <!-- COMPACT VIEW -->
