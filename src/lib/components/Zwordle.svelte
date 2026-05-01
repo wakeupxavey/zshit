@@ -1,6 +1,7 @@
 <script>
   import { getRandomWord } from './words.js';
-
+  import {base} from "$app/paths";
+  
   let word = getRandomWord();
   let guessed = new Set();
   let maxWrong = 7;
@@ -41,7 +42,7 @@
 
 
 
-  import {base} from "$app/paths";
+  
 </script>
 
 <!-- COMPACT VIEW -->
