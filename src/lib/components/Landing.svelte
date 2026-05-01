@@ -27,7 +27,9 @@
 
 // footer
 
-    import mail from '../assets/image/sitestuff7.png';
+  import mail from '../assets/image/sitestuff7.png';
+
+
 </script>
 
 <div class="squarezero">
