@@ -4,6 +4,9 @@
 	import Zwordle from "./Zwordle.svelte";
 
   let show = true;
+
+  // import image1 from "/image/sitestuff1.png";
+  
 </script>
 
 <div class="squarezero">
