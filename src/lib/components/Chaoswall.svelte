@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import { supabase } from '$lib/supabase';
 
   // ── Types ────────────────────────────────────────────────
   type Note = {
@@ -18,7 +19,6 @@
   // ── Config ──────────────────────────────────────────────
   const MAX_CHARS = 80;
   const MAX_NAME  = 3;
-  const STORAGE_KEY = 'chaoswall_notes';
 
   const BAD_WORDS = ['fuck','shit','bitch','ass','cunt','dick','pussy','fag','nigger','nigga','retard','whore','slut','bastard','damn','crap'];
 
@@ -34,12 +34,12 @@
   const ROTATIONS = [-2, 1.5, 1, -1, -1.8, 2, 0.5, -0.8];
 
   const SEED_NOTES: Note[] = [
-    { text: '"texted my ex at 2am and said it was autocorrect"',        initials: 'Z',   colorIdx: 0, ep: 'ep. 4 — the talking stage'    },
-    { text: '"called in sick to avoid a team-building exercise"',        initials: 'ANG', colorIdx: 1, ep: 'ep. 7 — the 9-to-5 arc'      },
-    { text: '"cried in a trader joe\'s parking lot and then got chips"', initials: 'MEG', colorIdx: 2, ep: 'ep. 2 — adulting fail'        },
-    { text: '"told my landlord the leak was \'giving character\'"',      initials: 'Z',   colorIdx: 3, ep: 'ep. 11 — first apartment arc' },
-    { text: '"got a plant. killed the plant. blamed the plant."',        initials: 'SAM', colorIdx: 4, ep: 'ep. 3 — responsibility arc'   },
-    { text: '"opened my credit card statement and disassociated"',       initials: 'Z',   colorIdx: 5, ep: 'ep. 9 — financial panic'      },
+    { text: '"texted my ex at 2am and said it was autocorrect"',        initials: 'Z',   colorIdx: 0, ep: null },
+    { text: '"called in sick to avoid a team-building exercise"',        initials: 'ANG', colorIdx: 1, ep: null },
+    { text: '"cried in a trader joe\'s parking lot and then got chips"', initials: 'MEG', colorIdx: 2, ep: null },
+    { text: '"told my landlord the leak was \'giving character\'"',      initials: 'Z',   colorIdx: 3, ep: null },
+    { text: '"got a plant. killed the plant. blamed the plant."',        initials: 'SAM', colorIdx: 4, ep: null },
+    { text: '"opened my credit card statement and disassociated"',       initials: 'Z',   colorIdx: 5, ep: null },
   ];
 
   // ── State ────────────────────────────────────────────────
@@ -49,21 +49,9 @@
   let inputText  = '';
   let inputName  = '';
   let error      = '';
+  let loading    = true;
 
   // ── Helpers ──────────────────────────────────────────────
-  function loadNotes(): Note[] {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      return stored ? JSON.parse(stored) : [];
-    } catch { return []; }
-  }
-
-function saveNotes(notes: Note[]): void {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(notes)); } catch (e) {
-    console.warn('Could not save notes to localStorage', e);
-  }
-}
-
   function pickRandom(pool: Note[], count: number): Note[] {
     const copy = [...pool];
     const out: Note[] = [];
@@ -88,11 +76,41 @@ function saveNotes(notes: Note[]): void {
     return BAD_WORDS.some(w => lower.includes(w));
   }
 
+  // ── Supabase ─────────────────────────────────────────────
+  async function loadNotes(): Promise<Note[]> {
+    const { data, error: err } = await supabase
+      .from('notes')
+      .select('text, initials, color_idx')
+      .order('created_at', { ascending: false });
+
+    if (err) {
+      console.warn('Could not load notes from Supabase', err);
+      return [];
+    }
+
+    return (data ?? []).map((row) => ({
+      text: row.text,
+      initials: row.initials,
+      colorIdx: row.color_idx,
+      ep: null,
+    }));
+  }
+
+  async function saveNote(note: Note): Promise<void> {
+    const { error: err } = await supabase.from('notes').insert({
+      text: note.text,
+      initials: note.initials,
+      color_idx: note.colorIdx,
+    });
+    if (err) console.warn('Could not save note to Supabase', err);
+  }
+
   // ── Lifecycle ────────────────────────────────────────────
-  onMount(() => {
-    const community = loadNotes();
+  onMount(async () => {
+    const community = await loadNotes();
     allNotes = [...SEED_NOTES, ...community];
     displayed = buildDisplayed(allNotes);
+    loading = false;
   });
 
   // ── Actions ──────────────────────────────────────────────
@@ -108,7 +126,7 @@ function saveNotes(notes: Note[]): void {
   function openModal(): void { modalOpen = true; inputText = ''; inputName = ''; error = ''; }
   function closeModal(): void { modalOpen = false; }
 
-  function submitNote(): void {
+  async function submitNote(): Promise<void> {
     error = '';
     const text = inputText.trim();
     const name = inputName.trim().toUpperCase().slice(0, MAX_NAME) || '???';
@@ -120,15 +138,9 @@ function saveNotes(notes: Note[]): void {
     const colorIdx = Math.floor(Math.random() * NOTE_COLORS.length);
     const newNote: Note = { text: `"${text}"`, initials: name, colorIdx, ep: null };
 
-    // persist
-    const community = loadNotes();
-    community.push(newNote);
-    saveNotes(community);
+    await saveNote(newNote);
 
-    // add to pool
     allNotes = [...allNotes, newNote];
-
-    // replace top-left slot (index 0) immediately
     displayed[0] = { note: newNote, rot: ROTATIONS[Math.floor(Math.random() * ROTATIONS.length)], flipped: false };
     displayed = [...displayed];
 
@@ -150,6 +162,11 @@ function saveNotes(notes: Note[]): void {
     <button class="make-btn" on:click={openModal}>+ make your own</button>
   </div>
 
+ {#if loading}
+  <p style="color: #FBD1A2; font-size: 0.75rem; text-align: center; padding: 1rem 0;">
+    loading the chaos...
+  </p>
+{:else}
   <div class="grid">
     {#each displayed as slot, i (i)}
       {@const color = NOTE_COLORS[slot.note.colorIdx ?? 0]}
@@ -164,11 +181,12 @@ function saveNotes(notes: Note[]): void {
           <p class="note-text">{slot.note.text}</p>
         </div>
         <div class="face back">
-            <p class="back-initial">— {slot.note.initials}</p>
+          <p class="back-initial">— {slot.note.initials}</p>
         </div>
       </button>
     {/each}
   </div>
+{/if}
 
   <button class="shuffle-btn" on:click={shuffle}>shuffle chaos ↻</button>
 </div>
