@@ -2,6 +2,7 @@
 
 <script>
 	import Zwordle from "./Zwordle.svelte";
+  import Chaoswall from "./Chaoswall.svelte";
 
   let show = true;
 
@@ -88,7 +89,7 @@
 
     <!-- ROW 3: znews -->
     <div class="row row-three">
-      <div class="squarefive"></div>  <!-- znews -->
+      <div class="squarefive"><Chaoswall/></div>  <!-- znews -->
     </div>
 
   </div>
@@ -158,7 +159,7 @@ main {
   flex-direction: column; }
 .squarethree { height: 200px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
 .squarefour  { height: 200px; border-radius: 8px; background-color: #BC4749; border: solid 1px black; position: relative;}
-.squarefive  { min-height: 120px; border-radius: 8px; background-color: lavender; width: 80%; }
+.squarefive  { min-height: 120px; border-radius: 8px; width: 90%; }
 .squaresix   { width: 100%; min-height: 60px; border-radius: 8px; border: 2px solid black; text-align: center; background-color: #BC4749; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0 1.5rem; box-sizing: border-box; }
 /* ── TABLET (640px–960px) ── */
 @media (min-width: 640px) {
