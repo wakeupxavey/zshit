@@ -46,7 +46,14 @@
 </script>
 
 <!-- COMPACT VIEW -->
-<div class="zwordle-compact">
+<div
+  class="zwordle-compact"
+  on:click={openModal}
+  on:keydown={(e) => e.key === 'Enter' || e.key === ' ' ? openModal() : null}
+  role="button"
+  tabindex="0"
+  style="cursor: pointer;"
+    >
   <h2 class="zhang-title">slangman</h2>
   <p class="subhead">basic unc test</p>
 
@@ -59,7 +66,7 @@
     </svg>
   </div>
 
-  <button class="word-display-btn" class:animating on:click={openModal} aria-label="Open game">
+  <button class="word-display-btn" class:animating aria-label="Open game">
   {#each word.split('') as letter, i (i)}
     <span class="letter-box" style="animation-delay: {i * 0.1}s">
       {guessed.has(letter) ? letter : '_'}
@@ -148,7 +155,8 @@
   padding: 0.4rem;
   width: 100%;
   box-sizing: border-box;
-  
+  cursor: pointer;
+
 }
 
 .subhead {
