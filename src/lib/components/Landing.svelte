@@ -35,6 +35,14 @@
 
   import { base } from "$app/paths";
 
+  // poke stickman function
+  let poked = false;
+
+  function pokeStickman() {
+  poked = true;
+  setTimeout(() => { poked = false; }, 3000);
+}
+
 </script>
 
 <div class="squarezero">
@@ -78,12 +86,17 @@
            <div class="stickbutton"> 
                 <a class="small-rect" href="{base}/#" on:click|preventDefault={() => show = !show}>Click me!</a>
             </div>
-        <img class = "stickman" src={stickland1} alt="Stick Figure" />
+            <!--stickman button  -->
+      <button class="stickman-btn" on:click={pokeStickman}>
+            <img class="stickman" src={stickland1} alt="Stick Figure" />
+      </button>
+
       </div> <!-- stick figure -->
       <div class="squarefour">
         <img class="bubble" src={bubble} alt="Speech Bubble">
-          <p class="bubble-text" class:show class:hide={!show}>Hello <span style="color: #BC4749;">newbie.</span></p>
-          <p class="bubble-text welcome" class:show={!show} class:hide={show} style="color: black;">Welcome to  <span>Z</span><span> </span><span>S</span><span>I</span><span>T</span><span>E</span><span>!</span></p>
+         <p class="bubble-text" class:show={show && !poked} class:hide={!show || poked}>Hello <span style="color: #BC4749;">newbie.</span></p>
+         <p class="bubble-text welcome" class:show={!show && !poked} class:hide={show || poked} style="color: black;"> Welcome to <span>Z</span><span> </span><span>S</span><span>I</span><span>T</span><span>E</span><span>!</span></p>
+         <p class="bubble-text" class:show={poked} class:hide={!poked} style="color: black;">Why would you do that?</p>
       </div>
     </div>
 
@@ -115,7 +128,6 @@ main {
   align-items: stretch;
   gap: 1rem;
   padding: 1rem;
-  border: 1px solid black;
 }
 
 /* ── SQUARES LAYOUT ── */
@@ -158,9 +170,9 @@ main {
 .squaretwo   { min-height: 160px; border-radius: 8px; background-color: #FBD1A2;  display: flex;
   flex-direction: column; }
 .squarethree { height: 200px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; overflow: hidden; }
-.squarefour  { height: 200px; border-radius: 8px; background-color: #BC4749; border: solid 1px black; position: relative;}
+.squarefour  { height: 200px; border-radius: 8px;  position: relative;}
 .squarefive  { min-height: 120px; border-radius: 8px; width: 90%; }
-.squaresix   { width: 100%; min-height: 60px; border-radius: 8px; border: 2px solid black; text-align: center; background-color: #BC4749; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0 1.5rem; box-sizing: border-box; }
+.squaresix   { width: 100%; min-height: 60px; border-radius: 8px; border: 1px solid black; text-align: center; background-color: #BC4749; display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0 1.5rem; box-sizing: border-box; }
 /* ── TABLET (640px–960px) ── */
 @media (min-width: 640px) {
   .row-one {
@@ -208,6 +220,19 @@ main {
   transform-origin: bottom center; /* pivots from the feet */
   animation: sway 2s ease-in-out infinite;
   
+}
+
+.stickman-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bubble {
@@ -404,10 +429,10 @@ main {
 }
 
 /* Place each one randomly around the main area */
-.bg1 { top: 10%;  right: 50%; }
-.bg2 { top: 10%; right: 25%; }
-.bg3 { top: 45%; right: 20%; }
-.bg4 { top: 35%; right: 1%; }
+.bg1 { top: 47%;  right: 40%; }
+.bg2 { top: 30%; right: 85%; }
+.bg3 { top: 55%; right: 80%; }
+.bg4 { top: 45%; right: 1%; }
 .bg5 { top: 75%; left: 2%; }
 .bg6 { top: 30%; right: 30%; }
 .bg7 { top: 30%; left: 6%; }
