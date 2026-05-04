@@ -5,7 +5,10 @@ const words = [
   "CHAT", "CHOPPED", "AURA", "COOKED", "BUSSIN",
   "GIGACHAD", "LOOKSMAXX", "MOGGING", "PERIOD", "RIZZLER",
   "SALTY", "SAVAGE", "SHADE", "SMOKE", "SNATCHED",
-  "SUS", "TWEAKING", "DEADASS", "GLAZING", "OHIO"
+  "SUS", "TWEAKING", "DEADASS", "GLAZING", "OHIO",
+  "POGGERS", "ZESTY", "SIX-SEVEN", "GOATED", "OOF",
+  "BASED", "FAAAAAAAAAAAAA", "GLIZZY", "JOEVER", "SHEESH",
+  "SLAPS", "WASHED", "ZAZA"
 ];
 
 export function getRandomWord() {
