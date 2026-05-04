@@ -34,12 +34,12 @@
   const ROTATIONS = [-2, 1.5, 1, -1, -1.8, 2, 0.5, -0.8];
 
   const SEED_NOTES: Note[] = [
-    { text: '"texted my ex at 2am and said it was autocorrect"',        initials: 'Z',   colorIdx: 0, ep: null },
-    { text: '"called in sick to avoid a team-building exercise"',        initials: 'ANG', colorIdx: 1, ep: null },
-    { text: '"cried in a trader joe\'s parking lot and then got chips"', initials: 'MEG', colorIdx: 2, ep: null },
-    { text: '"told my landlord the leak was \'giving character\'"',      initials: 'Z',   colorIdx: 3, ep: null },
-    { text: '"got a plant. killed the plant. blamed the plant."',        initials: 'SAM', colorIdx: 4, ep: null },
-    { text: '"opened my credit card statement and disassociated"',       initials: 'Z',   colorIdx: 5, ep: null },
+    { text: '"applied for a job and instead of hiring me they stole my personal data"',        initials: 'ZZZ',   colorIdx: 0, ep: null },
+    { text: '"took a mental health day after the nuggets lost"',        initials: 'MPJ', colorIdx: 1, ep: null },
+    { text: '"cried at trader joe\'s after the workers roasted my fit"', initials: 'UNC', colorIdx: 2, ep: null },
+    { text: '"told my landlord that my place had that a superglued john cena poster when I moved in"',      initials: 'JIM',   colorIdx: 3, ep: null },
+    { text: '"got a plant. killed the plant. got another plant."',        initials: 'PVZ', colorIdx: 4, ep: null },
+    { text: '"opened my credit card statement and disassociated"',       initials: 'CLD',   colorIdx: 5, ep: null },
   ];
 
   // ── State ────────────────────────────────────────────────

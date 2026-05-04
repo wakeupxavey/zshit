@@ -29,12 +29,12 @@
     <div class="goals-container">
        <div class="goals"> 
         <img src={met1} alt="Goal 1" />
-        <p>ZSHIT is a project that tries to tell stories to young adults.</p>
+        <p>ZSHIT is a youtube channel that tells stories about the young adult experience.</p>
       </div>
 <!--2 -->
       <div class="goals">
        <img src={met2} alt="Goal 1" />
-      <p>The idea was born from my friends. So before we move on, shoutout everyone from DC, the Springs, Tacoma, Berkeley, you all are le goats. </p>
+      <p>The idea was born from my friends. So before we move on, shoutout everyone from DC, the Springs, Tacoma, and Berkeley, you all are le goats. </p>
         
       </div>
 <!--3 -->
