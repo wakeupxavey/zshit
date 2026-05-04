@@ -17,7 +17,7 @@
   };
 
   // ── Config ──────────────────────────────────────────────
-  const MAX_CHARS = 80;
+  const MAX_CHARS = 70;
   const MAX_NAME  = 3;
 
   const BAD_WORDS = ['fuck','shit','bitch','ass','cunt','dick','pussy','fag','nigger','nigga','retard','whore','slut','bastard','damn','crap'];
@@ -34,10 +34,10 @@
   const ROTATIONS = [-2, 1.5, 1, -1, -1.8, 2, 0.5, -0.8];
 
   const SEED_NOTES: Note[] = [
-    { text: '"applied for a job and instead of hiring me they stole my personal data"',        initials: 'ZZZ',   colorIdx: 0, ep: null },
+    { text: '"applied for a job and they stole my personal data"',        initials: 'ZZZ',   colorIdx: 0, ep: null },
     { text: '"took a mental health day after the nuggets lost"',        initials: 'MPJ', colorIdx: 1, ep: null },
     { text: '"cried at trader joe\'s after the workers roasted my fit"', initials: 'UNC', colorIdx: 2, ep: null },
-    { text: '"told my landlord that my place had that a superglued john cena poster when I moved in"',      initials: 'JIM',   colorIdx: 3, ep: null },
+    { text: '"told my landlord that my place always had that john cena mural"',      initials: 'JIM',   colorIdx: 3, ep: null },
     { text: '"got a plant. killed the plant. got another plant."',        initials: 'PVZ', colorIdx: 4, ep: null },
     { text: '"opened my credit card statement and disassociated"',       initials: 'CLD',   colorIdx: 5, ep: null },
   ];
