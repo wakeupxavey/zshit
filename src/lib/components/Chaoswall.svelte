@@ -17,7 +17,7 @@
   };
 
   // ── Config ──────────────────────────────────────────────
-  const MAX_CHARS = 70;
+  const MAX_CHARS = 60;
   const MAX_NAME  = 3;
 
   const BAD_WORDS = ['fuck','shit','bitch','ass','cunt','dick','pussy','fag','nigger','nigga','retard','whore','slut','bastard','damn','crap'];

@@ -8,7 +8,7 @@ const words = [
   "SUS", "TWEAKING", "DEADASS", "GLAZING", "OHIO",
   "POGGERS", "ZESTY", "SIX-SEVEN", "GOATED", "OOF",
   "BASED", "FAAAAAAAAAAAAA", "GLIZZY", "JOEVER", "SHEESH",
-  "SLAPS", "WASHED", "ZAZA"
+  "SLAPS", "WASHED", "ZAZA", "FLEX", "GHOSTING"
 ];
 
 export function getRandomWord() {
