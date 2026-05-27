@@ -20,8 +20,8 @@
   const MAX_CHARS = 60;
   const MAX_NAME  = 3;
 
-  const BAD_WORDS = ['fuck','shit','bitch','ass','cunt','dick','pussy','fag','nigger','nigga','retard','whore','slut','bastard','damn','crap'];
-
+  const BAD_WORDS = ['ass','asshole','bastard','bitch','bollocks','bullshit','cock','crap','cum','cunt','damn','dick','dildo','douche','dumbass','fag','faggot','fuck','fucker','fucking','goddamn','hell','jackass','jerk','motherfucker','nigga','nigger','piss','prick','pussy','retard','shit','shithead','slut','twat','whore','wanker','spic','kike','chink','gook','wetback','tranny','dyke','homo','rape','rapist','pedophile','pedo','molest','molester','genocide','terrorist','jihad','nazi','hitler','kkk','lynch','slavery','porn','pornography','xxx','nude','naked','blowjob','handjob','masturbate','masturbation','orgasm','penis','vagina','boobs','tits','titties','anus','anal','boner','erection','ejaculate','ejaculation','semen','sperm','condom','viagra','prostitute','prostitution','escort','stripper','brothel','pimp','whoring','onlyfans','camgirl','suicide','selfharm','self-harm','anorexia','bulimia','overdose','noose','heroin','cocaine','meth','methamphetamine','crack','fentanyl','opioid','weed','marijuana','cannabis','drugdealer','drugdealing','kill','murder','stab','shoot','bomb','explosive','grenade','shooting','massacre','genocide','violence','abuse','bully','bullying','harass','harassment','stalk','stalking','phishing','malware','virus','ransomware']
+  
   const NOTE_COLORS = [
     { bg: '#FBD1A2', tc: '#7a3e1a' },
     { bg: '#fff8e7', tc: '#7a5c1e' },
