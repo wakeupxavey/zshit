@@ -70,11 +70,33 @@
       flipped: false,
     }));
   }
+  // Basic normalization to catch common obfuscations, not meant to be exhaustive or foolproof
+  
+  function normalize(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/[@4]/g, 'a')
+    .replace(/[1!|]/g, 'i')
+    .replace(/[3]/g, 'e')
+    .replace(/[0]/g, 'o')
+    .replace(/[5$]/g, 's')
+    .replace(/[7]/g, 't')
+    .replace(/[\s\-_.]/g, ''); // collapse spaces, dashes, dots
+}
 
-  function containsBadWord(str: string): boolean {
-    const lower = str.toLowerCase();
-    return BAD_WORDS.some(w => lower.includes(w));
-  }
+function containsBadWord(str: string): boolean {
+  const normalized = normalize(str);
+  const original   = str.toLowerCase();
+
+  return BAD_WORDS.some(w => {
+    // Word-boundary check on original input (catches "fuck" but not "cockpit")
+    const boundaryRegex = new RegExp(`\\b${w}\\b`, 'i');
+    // Raw include check on normalized input (catches "f@ck", "f u c k")
+    const normalizedMatch = normalized.includes(normalize(w));
+
+    return boundaryRegex.test(original) || normalizedMatch;
+  });
+}
 
   // ── Supabase ─────────────────────────────────────────────
   async function loadNotes(): Promise<Note[]> {
