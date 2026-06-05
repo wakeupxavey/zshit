@@ -22,6 +22,21 @@
 
   const BAD_WORDS = ['ass','asshole','bastard','bitch','bollocks','bullshit','cock','crap','cum','cunt','damn','dick','dildo','douche','dumbass','fag','faggot','fuck','fucker','fucking','goddamn','hell','jackass','jerk','motherfucker','nigga','nigger','piss','prick','pussy','retard','shit','shithead','slut','twat','whore','wanker','spic','kike','chink','gook','wetback','tranny','dyke','homo','rape','rapist','pedophile','pedo','molest','molester','genocide','terrorist','jihad','nazi','hitler','kkk','lynch','slavery','porn','pornography','xxx','nude','naked','blowjob','handjob','masturbate','masturbation','orgasm','penis','vagina','boobs','tits','titties','anus','anal','boner','erection','ejaculate','ejaculation','semen','sperm','condom','viagra','prostitute','prostitution','escort','stripper','brothel','pimp','whoring','onlyfans','camgirl','suicide','selfharm','self-harm','anorexia','bulimia','overdose','noose','heroin','cocaine','meth','methamphetamine','crack','fentanyl','opioid','weed','marijuana','cannabis','drugdealer','drugdealing','kill','murder','stab','shoot','bomb','explosive','grenade','shooting','massacre','genocide','violence','abuse','bully','bullying','harass','harassment','stalk','stalking','phishing','malware','virus','ransomware']
   
+ const ALLOWLIST = new Set([
+    'assassin', 'assassins', 'assassination', 'assassinate',
+    'classic', 'classics', 'classical',
+    'assumption', 'assume', 'assumed',
+    'basement', 'basements',
+    'cockpit', 'cockpits',
+    'scunthorpe',
+    'kumquat',
+    'titmouse',
+    'analysis',
+    'therapist', 'therapists',
+    'hotdog', 'hotdogs',
+    'worksheet', 'worksheets',
+  ]);
+
   const NOTE_COLORS = [
     { bg: '#FBD1A2', tc: '#7a3e1a' },
     { bg: '#fff8e7', tc: '#7a5c1e' },
@@ -72,31 +87,33 @@
   }
   // Basic normalization to catch common obfuscations, not meant to be exhaustive or foolproof
 
-  function normalize(str: string): string {
-  return str
-    .toLowerCase()
-    .replace(/[@4]/g, 'a')
-    .replace(/[1!|]/g, 'i')
-    .replace(/[3]/g, 'e')
-    .replace(/[0]/g, 'o')
-    .replace(/[5$]/g, 's')
-    .replace(/[7]/g, 't')
-    .replace(/[-_.]/g, ''); // collapse dashes, dots — but NOT spaces anymore
-}
+ function normalize(str: string): string {
+    return str
+      .toLowerCase()
+      .replace(/[@4]/g, 'a')
+      .replace(/[1!|]/g, 'i')
+      .replace(/[3]/g, 'e')
+      .replace(/[0]/g, 'o')
+      .replace(/[5$]/g, 's')
+      .replace(/[7]/g, 't')
+      .replace(/[-_.]/g, '');
+  }
 
-function containsBadWord(str: string): boolean {
-  const normalized = normalize(str);   // preserves spaces for boundary matching
-  const original   = str.toLowerCase();
+  function containsBadWord(str: string): boolean {
+    const original = str.toLowerCase();
+    const words    = original.split(/\s+/);
 
-  return BAD_WORDS.some(w => {
-    const normalizedWord = normalize(w);
-    // Use \b on both — works on original AND normalized (spaces preserved)
-    const boundaryRegex         = new RegExp(`\\b${w}\\b`, 'i');
-    const normalizedBoundaryRegex = new RegExp(`\\b${normalizedWord}\\b`, 'i');
+    return words.some(word => {
+      if (ALLOWLIST.has(word)) return false;
 
-    return boundaryRegex.test(original) || normalizedBoundaryRegex.test(normalized);
-  });
-}
+      return BAD_WORDS.some(w => {
+        const boundaryRegex           = new RegExp(`\\b${w}\\b`, 'i');
+        const normalizedBoundaryRegex = new RegExp(`\\b${normalize(w)}\\b`, 'i');
+
+        return boundaryRegex.test(word) || normalizedBoundaryRegex.test(normalize(word));
+      });
+    });
+  }
 
   // ── Supabase ─────────────────────────────────────────────
   async function loadNotes(): Promise<Note[]> {
