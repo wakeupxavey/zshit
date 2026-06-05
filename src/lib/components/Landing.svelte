@@ -113,10 +113,14 @@
 <div class="squaresix">
    <p class="footer-text">text me pls</p>
 
-   <a href="https://mail.google.com/mail/?view=cm&to=youremail@gmail.com" target="_blank" class="footer-input">
+  <a href="mailto:xaveybz@gmail.com?subject=wazzzzzupppp" class="footer-input">
   zmessage...
 </a>
+
+  <a href="mailto:xaveybz@gmail.com?subject=wazzzzzupppp" class="mail-icon-link">
     <img src={mail} alt="Mail" class="mail-icon" />
+  </a>
+   
 
 </div> <!-- footer -->
 
@@ -407,6 +411,11 @@ main {
   width: 48px;
   height: 48px;
   object-fit: contain;
+}
+
+.mail-icon:hover{
+  opacity: 0.8;
+  transform: scale(1.25);
 }
 
 main {
