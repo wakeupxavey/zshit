@@ -71,7 +71,7 @@
     }));
   }
   // Basic normalization to catch common obfuscations, not meant to be exhaustive or foolproof
-  
+
   function normalize(str: string): string {
   return str
     .toLowerCase()
@@ -81,20 +81,20 @@
     .replace(/[0]/g, 'o')
     .replace(/[5$]/g, 's')
     .replace(/[7]/g, 't')
-    .replace(/[\s\-_.]/g, ''); // collapse spaces, dashes, dots
+    .replace(/[-_.]/g, ''); // collapse dashes, dots — but NOT spaces anymore
 }
 
 function containsBadWord(str: string): boolean {
-  const normalized = normalize(str);
+  const normalized = normalize(str);   // preserves spaces for boundary matching
   const original   = str.toLowerCase();
 
   return BAD_WORDS.some(w => {
-    // Word-boundary check on original input (catches "fuck" but not "cockpit")
-    const boundaryRegex = new RegExp(`\\b${w}\\b`, 'i');
-    // Raw include check on normalized input (catches "f@ck", "f u c k")
-    const normalizedMatch = normalized.includes(normalize(w));
+    const normalizedWord = normalize(w);
+    // Use \b on both — works on original AND normalized (spaces preserved)
+    const boundaryRegex         = new RegExp(`\\b${w}\\b`, 'i');
+    const normalizedBoundaryRegex = new RegExp(`\\b${normalizedWord}\\b`, 'i');
 
-    return boundaryRegex.test(original) || normalizedMatch;
+    return boundaryRegex.test(original) || normalizedBoundaryRegex.test(normalized);
   });
 }
 
